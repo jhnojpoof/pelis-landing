@@ -49,21 +49,21 @@
 </head>
 <body>
   <h1>🎬 PelisEnYT</h1>
-  <!-- Banner de Adsterra -->
-	<!-- Banner de Adsterra -->
-	<!-- Banner Adsterra 728x90 -->
-<div style="text-align: center; margin: 20px 0;">
-  <script type="text/javascript">
-    atOptions = {
-      'key': '176c8fded9055e4bb15e29d107de6e1b',
-      'format': 'iframe',
-      'height': 90,
-      'width': 728,
-      'params': {}
-    };
-  </script>
-  <script type="text/javascript" src="//www.highperformanceformat.com/176c8fded9055e4bb15e29d107de6e1b/invoke.js"></script>
-</div>
+
+  <!-- Banner Adsterra 728x90 -->
+  <div style="text-align: center; margin: 20px 0;">
+    <script type="text/javascript">
+      atOptions = {
+        'key': '176c8fded9055e4bb15e29d107de6e1b',
+        'format': 'iframe',
+        'height': 90,
+        'width': 728,
+        'params': {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/176c8fded9055e4bb15e29d107de6e1b/invoke.js"></script>
+  </div>
+
   <div id="movies-container">Cargando películas...</div>
 
   <script>
@@ -72,17 +72,32 @@
     fetch(SHEET_URL)
       .then(response => response.text())
       .then(csv => {
-        const rows = csv.split('\\n').slice(1);
+        const rows = csv.split("\n");
+        const headers = rows.shift().split(",");
+
+        const data = rows.map(row => {
+          const values = row.split(",");
+          const obj = {};
+          headers.forEach((h, i) => {
+            obj[h.trim()] = values[i]?.replace(/^"|"$/g, '')?.trim();
+          });
+          return obj;
+        });
+
         const categorias = {};
 
-        rows.forEach(row => {
-          const [titulo, imagen, enlace, categoria] = row.split(',').map(c => c?.replace(/^"|"$/g, '')?.trim());
-          if (!titulo || !imagen || !enlace || !categoria) return;
+        data.forEach(peli => {
+          const { Título, Imagen, "Enlace YouTube": Enlace, Categoría } = peli;
+          if (!Título || !Imagen || !Enlace || !Categoría) return;
 
-          if (!categorias[categoria]) {
-            categorias[categoria] = [];
+          if (!categorias[Categoría]) {
+            categorias[Categoría] = [];
           }
-          categorias[categoria].push({ titulo, imagen, enlace });
+          categorias[Categoría].push({
+            titulo: Título,
+            imagen: Imagen,
+            enlace: Enlace
+          });
         });
 
         const container = document.getElementById("movies-container");
@@ -104,24 +119,4 @@
             card.className = "movie";
             card.innerHTML = `
               <img src="${movie.imagen}" alt="${movie.titulo}">
-              <button onclick="abrirPelicula('${movie.enlace}')">Ver ahora</button>
-            `;
-            movieRow.appendChild(card);
-          });
-
-          catDiv.appendChild(movieRow);
-          container.appendChild(catDiv);
-        });
-      })
-      .catch(error => {
-        console.error("Error cargando películas:", error);
-        document.getElementById("movies-container").innerText = "Error al cargar películas.";
-      });
-
-    function abrirPelicula(url) {
-      window.open('https://www.profitableratecpm.com/m99y1pb25?key=658dc9ba0d482c29cb5d609e0c878e65', '_blank'); // Aquí irá tu link Adsterra
-      window.location.href = url;
-    }
-  </script>
-</body>
-</html>
+              <button onclick="abrirPelicula('${movie.enlace}')">Ver
