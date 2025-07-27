@@ -1,122 +1,258 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>PelisEnYT</title>
-  <style>
-    body {
-      background: #111;
-      color: white;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .movie {
-      width: 200px;
-      background: #222;
-      padding: 10px;
-      border-radius: 10px;
-      text-align: center;
-    }
-    .movie img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .movie button {
-      margin-top: 10px;
-      padding: 8px 12px;
-      background: #e50914;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .movies {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 40px;
-    }
-    .category-title {
-      margin-top: 40px;
-      font-size: 1.5em;
-      border-bottom: 2px solid #444;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Películas Gratis</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function verPelicula(url) {
+            window.open('https://example-ad.com', '_blank');
+            window.location.href = url;
+        }
+    </script>
 </head>
 <body>
-  <h1>🎬 PelisEnYT</h1>
+    <header>
+        <h1>🎬 Películas por Categoría</h1>
+        <nav>
+            <a href="#terror">Terror</a>
+            <a href="#accion">Acción</a>
+            <a href="#comedia">Comedia</a>
+            <a href="#romantica">Romántica</a>
+            <a href="#suspenso">Suspenso</a>
+            <a href="#scifi">Sci-Fi</a>
+        </nav>
+    </header>
 
-  <!-- Banner Adsterra 728x90 -->
-  <div style="text-align: center; margin: 20px 0;">
-    <script type="text/javascript">
-      atOptions = {
-        'key': '176c8fded9055e4bb15e29d107de6e1b',
-        'format': 'iframe',
-        'height': 90,
-        'width': 728,
-        'params': {}
-      };
-    </script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/176c8fded9055e4bb15e29d107de6e1b/invoke.js"></script>
-  </div>
+    <!-- Banner Ad placeholder -->
+    <div class="banner-ad">
+        <!-- Pega aquí tu código Adsterra cuando lo tengas -->
+        <p>Publicidad aquí</p>
+    </div>
 
-  <div id="movies-container">Cargando películas...</div>
+    <main>
+        <section class="category" id="terror">
+<h2>Terror</h2>
+<div class="movies">
 
-  <script>
-    const SHEET_URL = "https://docs.google.com/spreadsheets/d/1ZSlFxVfAmpsXUNqfUzuyxBonDvyRLRAs6oj2D8epDL4/gviz/tq?tqx=out:csv";
+        <div class="movie">
+            <img src="assets/terror.jpg" alt="Terror Película 1">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/terror.jpg" alt="Terror Película 2">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/terror.jpg" alt="Terror Película 3">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/terror.jpg" alt="Terror Película 4">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/terror.jpg" alt="Terror Película 5">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/terror.jpg" alt="Terror Película 6">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+</div>
+</section>
+<section class="category" id="acción">
+<h2>Acción</h2>
+<div class="movies">
 
-    fetch(SHEET_URL)
-      .then(response => response.text())
-      .then(csv => {
-        const rows = csv.split("\n");
-        const headers = rows.shift().split(",");
+        <div class="movie">
+            <img src="assets/accion.jpg" alt="Acción Película 1">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/accion.jpg" alt="Acción Película 2">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/accion.jpg" alt="Acción Película 3">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/accion.jpg" alt="Acción Película 4">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/accion.jpg" alt="Acción Película 5">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/accion.jpg" alt="Acción Película 6">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+</div>
+</section>
+<section class="category" id="comedia">
+<h2>Comedia</h2>
+<div class="movies">
 
-        const data = rows.map(row => {
-          const values = row.split(",");
-          const obj = {};
-          headers.forEach((h, i) => {
-            obj[h.trim()] = values[i]?.replace(/^"|"$/g, '')?.trim();
-          });
-          return obj;
-        });
+        <div class="movie">
+            <img src="assets/comedia.jpg" alt="Comedia Película 1">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/comedia.jpg" alt="Comedia Película 2">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/comedia.jpg" alt="Comedia Película 3">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/comedia.jpg" alt="Comedia Película 4">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/comedia.jpg" alt="Comedia Película 5">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/comedia.jpg" alt="Comedia Película 6">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+</div>
+</section>
+<section class="category" id="romántica">
+<h2>Romántica</h2>
+<div class="movies">
 
-        const categorias = {};
+        <div class="movie">
+            <img src="assets/romantica.jpg" alt="Romántica Película 1">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/romantica.jpg" alt="Romántica Película 2">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/romantica.jpg" alt="Romántica Película 3">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/romantica.jpg" alt="Romántica Película 4">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/romantica.jpg" alt="Romántica Película 5">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/romantica.jpg" alt="Romántica Película 6">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+</div>
+</section>
+<section class="category" id="suspenso">
+<h2>Suspenso</h2>
+<div class="movies">
 
-        data.forEach(peli => {
-          const { Título, Imagen, "Enlace YouTube": Enlace, Categoría } = peli;
-          if (!Título || !Imagen || !Enlace || !Categoría) return;
+        <div class="movie">
+            <img src="assets/suspenso.jpg" alt="Suspenso Película 1">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/suspenso.jpg" alt="Suspenso Película 2">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/suspenso.jpg" alt="Suspenso Película 3">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/suspenso.jpg" alt="Suspenso Película 4">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/suspenso.jpg" alt="Suspenso Película 5">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/suspenso.jpg" alt="Suspenso Película 6">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+</div>
+</section>
+<section class="category" id="sci-fi">
+<h2>Sci-Fi</h2>
+<div class="movies">
 
-          if (!categorias[Categoría]) {
-            categorias[Categoría] = [];
-          }
-          categorias[Categoría].push({
-            titulo: Título,
-            imagen: Imagen,
-            enlace: Enlace
-          });
-        });
+        <div class="movie">
+            <img src="assets/scifi.jpg" alt="Sci-Fi Película 1">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/scifi.jpg" alt="Sci-Fi Película 2">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/scifi.jpg" alt="Sci-Fi Película 3">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/scifi.jpg" alt="Sci-Fi Película 4">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/scifi.jpg" alt="Sci-Fi Película 5">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+        <div class="movie">
+            <img src="assets/scifi.jpg" alt="Sci-Fi Película 6">
+            <button onclick="verPelicula('https://youtube.com/fake-trailer')">Ver ahora</button>
+        </div>
+        
+</div>
+</section>
 
-        const container = document.getElementById("movies-container");
-        container.innerHTML = "";
+    </main>
 
-        Object.keys(categorias).forEach(cat => {
-          const catDiv = document.createElement("div");
-          const catTitle = document.createElement("h2");
-          catTitle.textContent = cat;
-          catTitle.className = "category-title";
-          catTitle.id = cat.toLowerCase();
-          catDiv.appendChild(catTitle);
+    <footer>
+        <p>&copy; 2025 Pelis Viral. No alojamos contenido, solo compartimos enlaces.</p>
+    </footer>
+</body>
+</html>
 
-          const movieRow = document.createElement("div");
-          movieRow.className = "movies";
-
-          categorias[cat].forEach(movie => {
-            const card = document.createElement("div");
-            card.className = "movie";
-            card.innerHTML = `
-              <img src="${movie.imagen}" alt="${movie.titulo}">
-              <button onclick="abrirPelicula('${movie.enlace}')">Ver
